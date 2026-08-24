@@ -1,94 +1,128 @@
-# Aponti-Academy
-# Aponti Academy — Análise de Dados
+📊 Aponti Academy — Análise de Dados
 
-Repositório de estudos e projetos práticos do curso de **Análise de Dados da Aponti**, reunindo exercícios de módulo e o projeto principal de análise dos dados abertos de acidentes de trânsito da **Polícia Rodoviária Federal (PRF)**.
+Repositório dedicado ao registro e à documentação das atividades práticas desenvolvidas durante minha formação em **Análise de Dados pela Aponti Academy**.
 
-## Autor
+O projeto reúne exercícios, análises e trabalhos desenvolvidos ao longo da formação, utilizando dados reais e ferramentas aplicadas ao processo de análise de dados.
 
-Fernando José Menezes da Silva
 
-## Sumário
 
-- [Sobre o repositório](#sobre-o-repositório)
-- [Conteúdo](#conteúdo)
-- [Projeto principal — Análise PRF 2025](#projeto-principal--análise-prf-2025)
-- [Materiais de módulo](#materiais-de-módulo)
-- [Como executar](#como-executar)
-- [Requisitos](#requisitos)
+👨‍💻 Sobre mim
 
-## Sobre o repositório
+**Fernando José Menezes da Silva**
 
-Este repositório reúne os artefatos produzidos ao longo da trilha de Análise de Dados da Aponti, incluindo notebooks de tratamento e exploração de dados, planilhas de atividades e exercícios de módulo. Serve tanto como portfólio de aprendizado quanto como base para os projetos práticos do curso.
+Estudante de tecnologia com foco no desenvolvimento de competências em **Análise de Dados, Python, SQL e Engenharia de Dados**.
 
-## Conteúdo
+Este repositório representa parte da minha trajetória prática de aprendizagem, reunindo projetos desenvolvidos durante a formação e organizados com foco em documentação, análise e construção de portfólio profissional.
 
-| Arquivo | Descrição |
+
+
+ 🎯 Objetivo do repositório
+
+Este repositório tem como objetivo centralizar e documentar minha evolução durante o curso de Análise de Dados.
+
+Os projetos aqui apresentados buscam demonstrar, na prática, minha capacidade de:
+
+- trabalhar com dados reais;
+- organizar e preparar bases de dados;
+- realizar análises exploratórias;
+- construir indicadores;
+- identificar padrões;
+- interpretar informações;
+- utilizar ferramentas de análise;
+- documentar processos e resultados.
+
+
+
+ 📚 Atividades desenvolvidas
+
+As atividades estão organizadas individualmente para facilitar a navegação e a compreensão de cada projeto.
+
+ 📊 [01 — Análises](./01_Analises/)
+
+Projeto de análise e preparação de dados utilizando registros de acidentes de trânsito da **Polícia Rodoviária Federal (PRF)**.
+
+**Principais conhecimentos aplicados:**
+
+- Python;
+- Pandas;
+- NumPy;
+- análise exploratória de dados;
+- preparação e tratamento de dados;
+- criação de variáveis;
+- interpretação de indicadores.
+
+📁 [Acessar atividade](./01_Analises/)
+
+
+
+🗂️ [02 — Dados](./02_Dados/)
+
+Atividade prática utilizando dados abertos da PRF, com foco na compreensão, organização e preparação de uma base de dados real.
+
+**Principais conhecimentos aplicados:**
+
+- organização de dados;
+- identificação de variáveis;
+- preparação de bases;
+- análise inicial;
+- qualidade e consistência dos dados;
+- utilização de planilhas.
+
+📁 [Acessar atividade](./02_Dados/)
+
+
+
+ 📈 [03 — Módulo](./03_Modulo/)
+
+Atividade de análise de acidentes da PRF utilizando tabelas e indicadores para investigar diferentes dimensões dos dados.
+
+**Principais análises realizadas:**
+
+- acidentes por unidade federativa;
+- evolução temporal;
+- principais causas;
+- mortes por rodovia;
+- tipo de acidente e gravidade;
+- condições meteorológicas.
+
+📁 [Acessar atividade](./03_Modulo/)
+
+
+
+🛠️ Tecnologias e ferramentas
+
+Durante as atividades foram utilizadas diferentes ferramentas e tecnologias relacionadas ao processo de análise de dados.
+
+| Tecnologia / Ferramenta | Aplicação |
 |---|---|
-| [`analise_prf_2025.ipynb`](https://github.com/user-attachments/files/30915731/analise_prf_2025.ipynb) | Notebook principal: preparação, limpeza e transformação dos dados de acidentes da PRF 2025. |
-| [`dados_abertos_prf_atividade.xlsx`](https://github.com/user-attachments/files/30915962/dados_abertos_prf_atividade.xlsx) | Planilha de apoio com os dados abertos da PRF utilizados na atividade prática. |
-| [`Modulo_02_PRF_fernandoMenezes.xls`](https://github.com/user-attachments/files/30915955/Modulo_02_PRF_fernandoMenezes.xls) | Exercício do Módulo 2 do curso, com análise inicial sobre os dados da PRF. |
-
-## Projeto principal — Análise PRF 2025
-
-O notebook `analise_prf_2025.ipynb` transforma o dado bruto de acidentes de trânsito em rodovias federais (72.529 registros) em duas bases de saída:
-
-- **Base analítica** — completa, para EDA e dashboards (Power BI);
-- **Base modelável** — reduzida e livre de *data leakage*, pronta para treinar um modelo de árvore de decisão explicável.
-
-### Etapas do pipeline
-
-1. Ingestão e padronização de nomes de colunas;
-2. Diagnóstico de qualidade (tipos, nulos, cardinalidade);
-3. Conversão de colunas numéricas e temporais;
-4. Criação de variáveis derivadas (`turno`, `faixa_horaria`, `br_formatada`, `chave_localidade`);
-5. Tratamento de valores ausentes (categóricos → `IGNORADO`, contagens → `0`);
-6. Construção da variável-alvo `acidente_fatal` (`1` quando `mortos >= 1`) e de indicadores de gravidade;
-7. Checagem automática contra vazamento de dados (*data leakage*) na base modelável;
-8. Exportação das bases tratadas, do dicionário de variáveis e do log de decisões de tratamento.
-
-### Principais números
-
-- **72.529** acidentes analisados;
-- **5.210** acidentes fatais (**taxa de fatalidade ≈ 7,18%**);
-- **6.043** mortos e **83.550** feridos no total;
-- Base analítica final com **44 colunas**; base modelável com **19 colunas**.
-
-## Materiais de módulo
-
-Os arquivos `dados_abertos_prf_atividade.xlsx` e `Modulo_02_PRF_fernandoMenezes.xls` correspondem a atividades práticas de módulos anteriores do curso, utilizados como base ou etapa preparatória para o projeto principal de análise da PRF.
-
-## Como executar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/fernandomenezeseng/Aponti-Academy.git
-   ```
-2. Abra `analise_prf_2025.ipynb` no Jupyter, VS Code ou Google Colab.
-3. Coloque o CSV de dados abertos da PRF na pasta `dados_brutos/` (criada automaticamente pelo notebook, caso não exista).
-4. Execute as células em ordem — as bases tratadas e os artefatos de apoio serão gerados em `dados_tratados/` e `logs/`.
-
-> O notebook foi originalmente desenvolvido no Google Colab. Ao rodar localmente, substitua as células de upload via `google.colab.files` pelo carregamento direto do arquivo.
-
-## Requisitos
-
-- Python 3.9+
-- pandas
-- numpy
-- matplotlib
-
-```bash
-pip install pandas numpy matplotlib
-```
-
----
-
-*Repositório mantido como parte da trilha de Análise de Dados da Aponti.*
-
-[analise_prf_2025.ipynb](https://github.com/user-attachments/files/30915731/analise_prf_2025.ipynb)
-
-[dados_abertos_prf_atividade.xlsx](https://github.com/user-attachments/files/30915962/dados_abertos_prf_atividade.xlsx)
-
-[Modulo_02_PRF_fernandoMenezes.xls](https://github.com/user-attachments/files/30915955/Modulo_02_PRF_fernandoMenezes.xls)
+| 🐍 **Python** | Programação e análise de dados |
+| 🐼 **Pandas** | Manipulação e tratamento de dados |
+| 🔢 **NumPy** | Operações e processamento de dados |
+| 📊 **Matplotlib** | Visualização de dados |
+| 📑 **Excel** | Organização e análise de dados |
+| ☁️ **Google Colab** | Desenvolvimento dos notebooks |
+| 🗃️ **SQL** | Consulta e análise de dados |
+| 🐙 **GitHub** | Versionamento e documentação dos projetos |
 
 
 
+🔎 Processo de análise
+
+As atividades desenvolvidas seguem, de forma geral, um fluxo de trabalho baseado nas principais etapas de um projeto de análise de dados:
+
+```text
+Dados brutos
+     ↓
+Exploração
+     ↓
+Tratamento
+     ↓
+Organização
+     ↓
+Análise
+     ↓
+Indicadores
+     ↓
+Interpretação
+     ↓
+Documentação
